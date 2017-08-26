@@ -1,0 +1,182 @@
+* {
+  transition: all .3s eas-in-out;
+}
+
+body {
+  background-color: #BDBDBD;
+  font-family: 'roboto';
+}
+
+.container {
+  width: 1000px;
+  margin: 0 auto;
+}
+
+.container .gridContainer {
+  width: 75%;
+  margin: 100px auto 0px auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  grid-template-areas: "resultado resultado resultado borrar" "siete ocho nueve suma" "cuatro cinco seis resta" "uno dos tres mult" " punto cero igual div";
+  box-shadow: 3px 3px 9px #666;
+}
+
+.container .gridContainer .btn {
+  display: inline-block;
+  height: 86px;
+  border: none;
+  background-color: #212121;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all ease-in-out .2s;
+}
+
+.container .gridContainer .btn:hover {
+  background-color: #00cccc;
+}
+
+.container .gridContainer .btn:focus {
+  outline: none;
+}
+
+.container .gridContainer .btnLateral {
+  background-color: #888;
+}
+
+.container .gridContainer .btn1 {
+  grid-area: uno;
+}
+
+.container .gridContainer .btn2 {
+  grid-area: dos;
+}
+
+.container .gridContainer .btn3 {
+  grid-area: tres;
+}
+
+.container .gridContainer .btn4 {
+  grid-area: cuatro;
+}
+
+.container .gridContainer .btn5 {
+  grid-area: cinco;
+}
+
+.container .gridContainer .btn6 {
+  grid-area: seis;
+}
+
+.container .gridContainer .btn7 {
+  grid-area: siete;
+}
+
+.container .gridContainer .btn8 {
+  grid-area: ocho;
+}
+
+.container .gridContainer .btn9 {
+  grid-area: nueve;
+}
+
+.container .gridContainer .btn0 {
+  grid-area: cero;
+}
+
+.container .gridContainer .btnPunto {
+  grid-area: punto;
+}
+
+.container .gridContainer .btnIgual {
+  grid-area: igual;
+}
+
+.container .gridContainer .resultado {
+  padding-right: 30px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  background-color: white;
+  grid-area: resultado;
+  position: relative;
+  overflow: hidden;
+}
+
+.container .gridContainer .resultado.error {
+  animation-name: error;
+  animation-timing-function: infinite;
+  animation-duration: 300ms;
+  animation-iteration-count: 3;
+  animation-fill-mode: ease;
+  background-color: rgba(255, 99, 71, 0.7);
+}
+
+.container .gridContainer .resultado .contenidoResultado {
+  padding-left: 2rem;
+  text-shadow: 0px 2px 3px #ccc;
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.container .gridContainer .resultado .btnNum {
+  background: none;
+  outline: none;
+  border: none;
+  border-left: 1px solid rgba(33, 33, 33, 0.4);
+  height: 90%;
+  padding: 0px 30px;
+  position: absolute;
+  cursor: pointer;
+  right: 0;
+  transition: all ease-in .2s;
+  overflow: hidden;
+}
+
+.container .gridContainer .resultado .btnNum:hover {
+  border-left: 1px solid rgba(33, 33, 33, 0.7);
+  color: rgba(33, 33, 33, 0.7);
+}
+
+.container .gridContainer .btnBorrar {
+  background-color: teal;
+  grid-area: borrar;
+  font-size: 1.5rem;
+}
+
+.container .gridContainer .btnSuma {
+  grid-area: suma;
+}
+
+.container .gridContainer .btnResta {
+  grid-area: resta;
+}
+
+.container .gridContainer .btnMult {
+  grid-area: mult;
+}
+
+.container .gridContainer .btnDiv {
+  grid-area: div;
+}
+
+.container .resultadosPasados {
+  width: 75%;
+  margin: 5px auto;
+}
+
+@keyframes error {
+  0% {
+    transform: translateX(20px);
+  }
+  50% {
+    transform: translateX(-20px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}

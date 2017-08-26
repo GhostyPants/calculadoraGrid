@@ -1,0 +1,144 @@
+*
+    transition: all .3s eas-in-out
+
+body
+    background: 
+        color: #BDBDBD
+    font: 
+        family: 'roboto'
+
+.container
+    width: 1000px
+    margin: 0 auto
+
+
+
+    .gridContainer
+        width: 75%
+        margin: 100px auto 0px auto
+        display: grid
+        grid-template:
+            columns: repeat(4, 1fr)
+            rows: repeat(5, 1fr)
+        grid-template-areas: "resultado resultado resultado borrar" "siete ocho nueve suma" "cuatro cinco seis resta" "uno dos tres mult" " punto cero igual div"
+        box-shadow: 3px 3px 9px #666
+        
+        .btn
+            display: inline-block
+            height: 86px
+            border: none
+            background: 
+                color: #212121
+            color: white
+            text-align: center
+            font:
+                weight: bold
+                size: 1rem
+            cursor: pointer
+            transition: all ease-in-out .2s
+
+            &:hover
+                background: 
+                    color: darken(cyan, 10%)
+            &:focus
+                outline: none
+        .btnLateral
+            background: 
+                color: #888
+        .btn1
+            grid-area: uno
+        .btn2
+            grid-area: dos
+        .btn3
+            grid-area: tres
+        .btn4
+            grid-area: cuatro
+        .btn5
+            grid-area: cinco
+        .btn6
+            grid-area: seis
+        .btn7
+            grid-area: siete
+        .btn8
+            grid-area: ocho
+        .btn9
+            grid-area: nueve
+        .btn0
+            grid-area: cero
+        .btnPunto
+            grid-area: punto
+        .btnIgual
+            grid-area: igual
+        .resultado
+            padding-right: 30px
+            display: flex
+            flex-direction: row
+            flex-wrap: wrap
+            align-items: center
+            background: 
+                color: white
+            grid-area: resultado
+            position: relative
+            overflow: hidden
+
+            &.error
+                animation:
+                    name: error
+                    timing-function: infinite
+                    duration: 300ms
+                    iteration-count: 3
+                    fill-mode: ease
+                background-color: transparentize(tomato, .3)
+            .contenidoResultado
+                padding-left: 2rem
+                text-shadow: 0px 2px 3px #ccc
+                font: 
+                    size: 1.8rem
+                    weight: bold
+
+            .btnNum
+                background: none
+                outline: none
+                border: none
+                border-left: 1px solid transparentize(#212121, .6)
+                height: 90%
+                padding: 0px 30px
+                position: absolute
+                cursor: pointer
+                right: 0
+                transition: all ease-in .2s
+                overflow: hidden
+
+                &:hover
+                    border-left: 1px solid transparentize(#212121, .3)
+                    // background: transparentize(#212121, .6)
+                    color: transparentize(#212121, .3)
+
+        .btnBorrar
+            background: 
+             color: teal
+            grid-area: borrar
+            font: 
+                size: 1.5rem
+        .btnSuma
+            grid-area: suma
+        .btnResta
+            grid-area: resta
+        .btnMult
+            grid-area: mult
+        .btnDiv
+            grid-area: div
+    
+    .resultadosPasados
+        width: 75%
+        margin: 5px auto
+
+@keyframes error 
+    0%
+        transform: translateX(20px);
+    50%
+        transform: translateX(-20px);
+    100%
+        transform: translateX(0px);
+
+   
